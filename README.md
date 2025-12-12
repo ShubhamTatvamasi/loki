@@ -40,12 +40,12 @@ Loki API gateway:
 ```
 http://loki-gateway.loki.svc.cluster.local/
 ```
-Send requests with header `X-Scope-OrgID: foo`.
+Send requests with header `X-Scope-OrgID: loki`.
 
 ## Deploy Promtail
 ```bash
 helm upgrade -i promtail grafana/promtail \
   --namespace loki \
   --set config."clients[0]".url="http://loki:3100/loki/api/v1/push" \
-  --set config."clients[0]".tenant_id=foo
+  --set config."clients[0]".tenant_id=loki
 ```
