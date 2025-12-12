@@ -14,7 +14,8 @@ helm upgrade -i loki grafana/loki \
   --set loki.storage.type=filesystem \
   --set singleBinary.replicas=1 \
   --set loki.useTestSchema=true \
-  --set deploymentMode='SingleBinary<->SimpleScalable'
+  --set deploymentMode='SingleBinary<->SimpleScalable' \
+  --set memcached.enabled=false
 ```
 
 Install Grafana:
