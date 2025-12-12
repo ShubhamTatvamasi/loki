@@ -21,6 +21,5 @@ Install Grafana:
 ```bash
 helm upgrade -i grafana grafana/grafana \
   --namespace loki \
-  --set adminPassword='admin' \
-  --set service.type=NodePort
+  --set adminPassword='admin'
 ```
