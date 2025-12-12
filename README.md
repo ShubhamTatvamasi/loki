@@ -20,6 +20,14 @@ cd loki
 helm upgrade -i loki grafana/loki -f single-binary-values.yaml
 ```
 
+Install promtail:
+```bash
+helm upgrade -i promtail grafana/promtail \
+  --namespace loki \
+  --set config."clients[0]".url="http://loki:3100/loki/api/v1/push" \
+  --set config."clients[0]".tenant_id=foo
+```
+
 Access grafana dashboard:
 ```bash
 kubectl port-forward -n loki svc/grafana 3000:80
@@ -36,10 +44,7 @@ HTTP header | Value
 ---|---
 X-Scope-OrgID | foo
 
-
-
 ---
-
 
 ### OLD
 
