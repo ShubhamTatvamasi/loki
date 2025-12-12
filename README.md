@@ -16,3 +16,11 @@ helm upgrade -i loki grafana/loki \
   --set loki.useTestSchema=true \
   --set deploymentMode='SingleBinary<->SimpleScalable'
 ```
+
+Install Grafana:
+```bash
+helm upgrade -i grafana grafana/grafana \
+  --namespace loki \
+  --set adminPassword='admin' \
+  --set service.type=NodePort
+```
