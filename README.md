@@ -5,24 +5,19 @@ Add grafana helm repo:
 helm repo add grafana https://grafana.github.io/helm-charts
 ```
 
-Install loki:
-```bash
-helm upgrade -i loki grafana/loki \
-  --version 6.48.0 \
-  --create-namespace \
-  --namespace loki \
-  --set loki.storage.type=filesystem \
-  --set singleBinary.replicas=1 \
-  --set loki.useTestSchema=true \
-  --set deploymentMode='SingleBinary<->SimpleScalable' \
-  --set memcached.enabled=false
-```
-
 Install Grafana:
 ```bash
 helm upgrade -i grafana grafana/grafana \
+  --create-namespace \
   --namespace loki \
   --set adminPassword='admin'
+```
+
+Install Loki
+```
+helm pull --untar grafana/loki
+cd loki
+helm upgrade -i loki grafana/loki -f single-binary-values.yaml
 ```
 
 Access grafana dashboard:
@@ -37,9 +32,28 @@ Loki Source:
 http://loki-gateway.loki.svc.cluster.local/
 ```
 
-HTTP headers | Value
+HTTP header | Value
 ---|---
 X-Scope-OrgID | foo
 
+
+
+---
+
+
+### OLD
+
+Install loki:
+```bash
+helm upgrade -i loki grafana/loki \
+  --version 6.48.0 \
+  --create-namespace \
+  --namespace loki \
+  --set loki.storage.type=filesystem \
+  --set singleBinary.replicas=1 \
+  --set loki.useTestSchema=true \
+  --set deploymentMode='SingleBinary<->SimpleScalable' \
+  --set memcached.enabled=false
+```
 
 
