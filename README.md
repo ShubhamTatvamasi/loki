@@ -23,3 +23,10 @@ helm upgrade -i grafana grafana/grafana \
   --namespace loki \
   --set adminPassword='admin'
 ```
+
+Access grafana dashboard:
+```bash
+kubectl port-forward -n loki svc/grafana 3000:80
+```
+
+http://localhost:3000/login
