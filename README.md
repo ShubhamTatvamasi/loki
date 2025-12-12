@@ -17,7 +17,9 @@ Install Loki
 ```
 helm pull --untar grafana/loki
 cd loki
-helm upgrade -i loki grafana/loki -f single-binary-values.yaml
+helm upgrade -i loki grafana/loki \
+  --namespace loki \
+  -f single-binary-values.yaml
 ```
 
 Install promtail:
