@@ -31,3 +31,15 @@ kubectl port-forward -n loki svc/grafana 3000:80
 ```
 
 http://localhost:3000/login
+
+Loki Source:
+```
+http://loki-gateway.loki.svc.cluster.local/
+```
+
+HTTP headers | Value
+---|---
+X-Scope-OrgID | foo
+
+
+
