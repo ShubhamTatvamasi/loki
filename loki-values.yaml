@@ -8,6 +8,14 @@ loki:
     repository: grafana/loki
     tag: "3.6.3"
 
+backend:
+  image:
+    registry: npindusdirectacr.azurecr.io
+
+write:
+  image:
+    registry: npindusdirectacr.azurecr.io
+
 gateway:
   image:
     repository: nginxinc/nginx-unprivileged
@@ -27,6 +35,11 @@ memcachedExporter:
   image:
     repository: prom/memcached-exporter
     tag: "v0.15.4"
+
+sidecar:
+  image:
+    repository: kiwigrid/k8s-sidecar
+    tag: "1.30.9"
 
 loki:
   schemaConfig:
