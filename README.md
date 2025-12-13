@@ -2,6 +2,20 @@
 
 Quick start for deploying Grafana, Loki, and Promtail to Kubernetes using the Grafana Helm charts.
 
+## Architecture
+```mermaid
+flowchart TB
+  subgraph K8s["Kubernetes Cluster"]
+    N[(Node & Pod Logs)] --> P[Promtail DaemonSet]
+    P -- pushes --> GW[Loki Gateway Service]
+    GW --> L[Loki]
+    G[Grafana] -- queries --> GW
+  end
+
+  L -- stores chunks --> O[(Object Storage e.g. MinIO/S3)]
+  G -- dashboards --> U[Users]
+```
+
 ## Prereqs
 - Helm installed and configured to talk to your cluster
 - Kubernetes namespace `loki` (created automatically below)
