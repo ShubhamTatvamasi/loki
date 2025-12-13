@@ -1,3 +1,15 @@
+global:
+  imageRegistry: docker.io
+
+image:
+  repository: grafana/grafana
+  tag: "12.3.0"
+
+sidecar:
+  image:
+    repository: kiwigrid/k8s-sidecar
+    tag: "1.30.9"
+
 adminUser: admin
 adminPassword: admin
 

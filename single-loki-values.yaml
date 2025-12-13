@@ -1,4 +1,27 @@
 ---
+global:
+  imageRegistry: docker.io
+
+loki:
+  image:
+    repository: grafana/loki
+    tag: "3.6.3"
+
+lokiCanary:
+  image:
+    repository: grafana/loki-canary
+    tag: "3.6.3"
+
+memcached:
+  image:
+    repository: memcached
+    tag: "1.6.39-alpine"
+
+memcachedExporter:
+  image:
+    repository: prom/memcached-exporter
+    tag: "v0.15.4"
+
 loki:
   commonConfig:
     replication_factor: 1
@@ -41,6 +64,10 @@ chunksCache:
 # Enable minio for storage
 minio:
   enabled: true
+  image:
+    repository: minio/minio
+    tag: "RELEASE.2024-12-18T13-15-44Z"
+    registry: quay.io
 
 # Zero out replica counts of other deployment modes
 backend:

@@ -1,4 +1,11 @@
+global:
+  imageRegistry: docker.io
+
+image:
+  repository: grafana/promtail
+  tag: "3.5.1"
+
 config:
   clients:
-    - url: http://loki.loki.svc.cluster.local:3100/loki/api/v1/push
+    - url: http://loki-gateway.loki.svc.cluster.local/loki/api/v1/push
       tenant_id: loki
