@@ -2,8 +2,8 @@
 global:
   image:
     registry: npindusdirectacr.azurecr.io
-  imagePullSecrets:
-    - name: npindussecret
+imagePullSecrets:
+  - name: npindussecret
 
 loki:
   image:
@@ -69,6 +69,8 @@ minio:
   image:
     repository: npindusdirectacr.azurecr.io/minio/minio
     tag: "RELEASE.2024-12-18T13-15-44Z"
+  imagePullSecrets:
+    - name: npindussecret
   persistence:
     size: 20Gi
   replicas: 3
