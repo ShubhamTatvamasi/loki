@@ -1,6 +1,6 @@
 ---
 global:
-  imageRegistry: docker.io
+  imageRegistry: npindusdirectacr.azurecr.io
 
 loki:
   image:
@@ -67,7 +67,7 @@ minio:
   image:
     repository: minio/minio
     tag: "RELEASE.2024-12-18T13-15-44Z"
-    registry: quay.io
+    registry: npindusdirectacr.azurecr.io
 
 # Zero out replica counts of other deployment modes
 backend:
