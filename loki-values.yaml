@@ -1,17 +1,19 @@
 ---
 global:
-  imageRegistry: npindusdirectacr.azurecr.io
+  # imageRegistry: npindusdirectacr.azurecr.io
+  image:
+    registry: npindusdirectacr.azurecr.io
 
-image:
-  registry: npindusdirectacr.azurecr.io
-  repository: grafana/loki"
-  tag: "3.6.3"
+# image:
+#   registry: npindusdirectacr.azurecr.io
+#   repository: grafana/loki"
+#   tag: "3.6.3"
 
-# loki:
-#   image:
-#     registry: npindusdirectacr.azurecr.io
-#     repository: grafana/loki
-#     tag: "3.6.3"
+loki:
+  image:
+    registry: npindusdirectacr.azurecr.io
+    repository: grafana/loki
+    tag: "3.6.3"
 
 # backend:
 #   image:
