@@ -1,5 +1,7 @@
 global:
   imageRegistry: npindusdirectacr.azurecr.io
+  imagePullSecrets:
+    - name: npindussecret
 
 image:
   repository: grafana/promtail

@@ -1,6 +1,9 @@
 ---
 global:
-  imageRegistry: npindusdirectacr.azurecr.io
+  image:
+    registry: npindusdirectacr.azurecr.io
+  imagePullSecrets:
+    - name: npindussecret
 
 loki:
   image:
