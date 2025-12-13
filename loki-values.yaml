@@ -4,8 +4,8 @@ global:
 
 image:
   registry: npindusdirectacr.azurecr.io
-    repository: grafana/loki
-    tag: "3.6.3"
+  repository: grafana/loki"
+  tag: "3.6.3"
 
 # loki:
 #   image:
