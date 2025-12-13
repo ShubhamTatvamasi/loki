@@ -15,6 +15,18 @@ sidecar:
 adminUser: admin
 adminPassword: admin
 
+ingress:
+  enabled: true
+  ingressClassName: npindusdirect-ingress
+  path: /
+  pathType: Prefix
+  hosts:
+    - no-loki.example.com
+  tls:
+    - secretName: idirect-tlssecret-new
+      hosts:
+        - np-loki.example.com
+
 datasources:
   datasources.yaml:
     apiVersion: 1
