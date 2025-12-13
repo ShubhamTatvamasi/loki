@@ -62,7 +62,7 @@ minio:
     tag: "RELEASE.2024-12-18T13-15-44Z"
     registry: npindusdirectacr.azurecr.io
   persistence:
-    size: 100Gi
+    size: 20Gi
   replicas: 3
   resources:
     requests:
