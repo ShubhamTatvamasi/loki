@@ -4,6 +4,7 @@ global:
 
 loki:
   image:
+    registry: npindusdirectacr.azurecr.io
     repository: grafana/loki
     tag: "3.6.3"
 
@@ -58,9 +59,8 @@ write:
 minio:
   enabled: true
   image:
-    repository: minio/minio
+    repository: npindusdirectacr.azurecr.io/minio/minio
     tag: "RELEASE.2024-12-18T13-15-44Z"
-    registry: npindusdirectacr.azurecr.io
   persistence:
     size: 20Gi
   replicas: 3

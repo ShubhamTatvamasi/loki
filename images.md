@@ -12,4 +12,3 @@ memcached:1.6.39-alpine
 prom/memcached-exporter:v0.15.4
 quay.io/minio/minio:RELEASE.2024-12-18T13-15-44Z
 ```
-
