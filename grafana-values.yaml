@@ -21,7 +21,7 @@ ingress:
   path: /
   pathType: Prefix
   hosts:
-    - no-loki.example.com
+    - np-loki.example.com
   tls:
     - secretName: idirect-tlssecret-new
       hosts:
